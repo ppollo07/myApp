@@ -1,0 +1,77 @@
+#
+# Apaxy by @adamwhitcroft
+#
+# For a full breakdown of the mod_autoindex module:
+# http://apache.org/docs/2.2/mod/mod_autoindex.html
+#
+
+	# ENABLE INDEXING
+	Options +Indexes
+
+	# INDEX OPTIONS
+	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=*
+
+	# HIDE /theme DIRECTORY
+	IndexIgnore .htaccess /theme
+
+#
+# GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
+#
+
+#
+# Replace myApp with your directory URL eg:
+# If your directory is http://mywebsite.com/myApp/
+# you would change to:
+#
+# AddIcon /myApp/myApp/theme/icons/blank.png ^^BLANKICON^^
+#
+
+	AddIcon /myApp/theme/icons/blank.png ^^BLANKICON^^
+	AddIcon /myApp/theme/icons/folder.png ^^DIRECTORY^^
+	AddIcon /myApp/theme/icons/folder-home.png ..
+
+#
+# EXTENSION SPECIFIC ICONS
+#
+
+	AddIcon /myApp/theme/icons/audio.png .aif .iff .m3u .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg
+	AddIcon /myApp/theme/icons/bin.png .bin
+	AddIcon /myApp/theme/icons/c.png .c
+	AddIcon /myApp/theme/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+	AddIcon /myApp/theme/icons/css.png .css
+	AddIcon /myApp/theme/icons/deb.png .deb
+	AddIcon /myApp/theme/icons/doc.png .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+	AddIcon /myApp/theme/icons/draw.png .svg
+	AddIcon /myApp/theme/icons/eps.png .ai .eps
+	AddIcon /myApp/theme/icons/gif.png .gif
+	AddIcon /myApp/theme/icons/html.png .html .xhtml .shtml .htm
+	AddIcon /myApp/theme/icons/ico.png .ico
+	AddIcon /myApp/theme/icons/java.png .jar
+	AddIcon /myApp/theme/icons/jpg.png .jpg .jpeg
+	AddIcon /myApp/theme/icons/js.png .js .json
+	AddIcon /myApp/theme/icons/markdown.png .md
+	AddIcon /myApp/theme/icons/package.png .pkg .dmg
+	AddIcon /myApp/theme/icons/pdf.png .pdf
+	AddIcon /myApp/theme/icons/php.png .php .phtml
+	AddIcon /myApp/theme/icons/png.png .png
+	AddIcon /myApp/theme/icons/ps.png .ps
+	AddIcon /myApp/theme/icons/psd.png .psd
+	AddIcon /myApp/theme/icons/rar.png .rar
+	AddIcon /myApp/theme/icons/rb.png .rb
+	AddIcon /myApp/theme/icons/rpm.png .rpm
+	AddIcon /myApp/theme/icons/rss.png .rss
+	AddIcon /myApp/theme/icons/sql.png .sql
+	AddIcon /myApp/theme/icons/tiff.png .tiff
+	AddIcon /myApp/theme/icons/text.png .txt .nfo
+	AddIcon /myApp/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
+	AddIcon /myApp/theme/icons/xml.png .xml
+	AddIcon /myApp/theme/icons/zip.png .zip
+	DefaultIcon /myApp/theme/icons/default.png
+
+#
+# THEME FILES
+#
+
+	HeaderName /myApp/theme/header.html
+	ReadmeName /myApp/theme/footer.html
+	IndexStyleSheet "/myApp/theme/style.css"
